@@ -1,0 +1,11 @@
+
+new Vue
+*   el:             este elemento engloba donde queremos usar Vue en html y se identifica con un id ("#app") o con una class (".app")
+// interpolación sobre una propiedad
+*   {{mensaje}}:    esta cosa se llama interpolacion y es usar lo que se define en new Vue
+*   app.mensaje:    con esto desde el terminal del explorador podemos cambiar el contenido
+// interpolacion sobre metodos
+* {{mostrarMensaje()}}: se definde el metodo y se llama así, obviamente el metodo tiene que devolver algo
+* this: hay que usar this en metodo si se quiere usar sino no funciona por que no esta definido
+// enlace
+* v-bind:src("src") : donde src esta definido en data! de esta forma conseguimos metes el URL dentro de una propiedad de la imagen

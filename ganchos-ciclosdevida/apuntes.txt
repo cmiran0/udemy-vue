@@ -1,0 +1,13 @@
+
+//CICLO DE VIDA
+
+*   beforeCreate(): vue llama a este metodo justo antees de crear la instancia
+*   created(): una vez la instancia ya haya sido creada
+*   beforeMount(): aqui se monta la plantilla en el DOM
+*   mounted(): se ejecuta una vez ya se haya montado una plantilla en DOM
+*   beforeUpdate(): antes de que haya alguna actualización
+*   updated(): se ejecuta despues de una actualización, este y el anterior son prácticamente un bucle ya que la app no para
+*   beforeDestroy(): se ejecuta justo antes de destruirse la instancia //aqui se tiene que apagar las conexiones a las bd
+*   destroy():   muere
+
+* this.$destroy: el dola rindica que es un metodo que no hemos creado
