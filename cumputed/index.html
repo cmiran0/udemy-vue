@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo computed</title>
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button-counter :botones='botones' @updateCount="addCount"></button-counter>
+    <strong>TOTAL: {{botones}}</strong>
+</div>
+
+<script>
+    Vue.component('button-counter', {
+        template: `
+          <div>
+          <ul>
+            <li v-for="boton in botones">
+              <button v-on:click="addCount(boton)"> boton {{ boton.valor }}</button>
+            </li>
+          </ul>
+
+          </div>
+        `,
+        props: ['botones'],
+        data() {
+            return {
+                count: 0
+            }
+        }, methods: {
+            addCount(boton) {
+                this.$emit('updateCount', ++boton.valor)
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app',
+        data: {
+            botones: [{btn_id: 1, valor: 0},
+                {btn_id: 2, valor: 0},
+                {btn_id: 3, valor: 0},
+                {btn_id: 4, valor: 0}],
+            total:0
+        },
+        methods: {
+            addCount(boton) {
+                this.botones[boton.btn_id] = boton;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
